@@ -1,0 +1,17 @@
+file:
+  upload:
+    base: /Users/hyungguen.han/Documents/upload # any local folder
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/restapi
+    username: test
+    password: testpass
+    driver-class-name: org.mariadb.jdbc.Driver
+    validation-query: select 1
+    test-on-borrow: true
+    hikari:
+      initialization-fail-timeout: 10000
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+

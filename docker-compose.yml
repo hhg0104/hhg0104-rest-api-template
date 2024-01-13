@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  maria_db:
+    image: "mariadb:latest"
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: restapi
+      MYSQL_USER: test
+      MYSQL_PASSWORD: testpass
+      MARIADB_ROOT_PASSWORD: root
+  web:
+    build: .
+    ports:
+      - 8080:8080
+    depends_on:
+      - maria_db

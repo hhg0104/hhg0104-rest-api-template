@@ -1,0 +1,16 @@
+file:
+  upload:
+    base: /usr/local/upload
+spring:
+  datasource:
+    url: jdbc:mariadb://host.docker.internal:3306/restapi
+    username: test
+    password: testpass
+    driver-class-name: org.mariadb.jdbc.Driver
+    validation-query: select 1
+    test-on-borrow: true
+    hikari:
+      initialization-fail-timeout: 10000
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
